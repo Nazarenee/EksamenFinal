@@ -21,13 +21,11 @@ public class ApplicationConfig {
     private static int count = 1;
 
     private static void configuration(JavalinConfig config) {
-        // General configuration
         config.showJavalinBanner = false;
         config.router.ignoreTrailingSlashes = true;
         config.router.treatMultipleSlashesAsSingleSlash = true;
         config.bundledPlugins.enableDevLogging();
 
-        // Routing
         config.router.contextPath = "/api";
         config.bundledPlugins.enableRouteOverview("/routes", Role.ANYONE);
         config.router.apiBuilder(routes.getRoutes());
@@ -39,14 +37,11 @@ public class ApplicationConfig {
         Javalin app = Javalin.create(ApplicationConfig::configuration);
         app.start(port);
 
-        // Logging
         app.after(ApplicationConfig::afterRequest);
         logger.info("Server started on port: {}", port);
 
-        // Exception handling
         exceptionController.setExceptionHandlers(app);
 
-        // Authentication
         app.beforeMatched(ctx -> accessController.accessHandler(ctx));
         app.after(ApplicationConfig::afterRequest);
         return app;
@@ -56,9 +51,7 @@ public class ApplicationConfig {
         app.stop();
     }
 
-    /**
-     *  Logging after each API request
-     */
+
     private static void afterRequest(Context ctx) {
         String requestInfo = ctx.req().getMethod() + " " + ctx.req().getRequestURI();
         logger.info("Request #{} - {} handled with status {}", count++, requestInfo, ctx.status());

@@ -14,5 +14,5 @@ public class PackingItemDTO {
     private String category;
     private ZonedDateTime createdAt;
     private ZonedDateTime updatedAt;
-    private List<BuyinOption> buyingOptions;
+    private List<Buy> buyingOptions;
 }

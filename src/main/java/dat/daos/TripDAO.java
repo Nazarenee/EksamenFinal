@@ -142,10 +142,10 @@ public class TripDAO implements IDAO<TripDTO, Long>, iTripGuideDAO {
             em.merge(trip);
             em.getTransaction().commit();
         } catch (Exception e) {
-            // Log the exception message and stack trace for debugging
+
             System.err.println("Error adding guide to trip: " + e.getMessage());
-            e.printStackTrace();  // This prints the stack trace to the console
-            throw e;  // Rethrow to handle in the controller
+            e.printStackTrace();
+            throw e;
         }
     }
 
@@ -159,7 +159,6 @@ public class TripDAO implements IDAO<TripDTO, Long>, iTripGuideDAO {
                 throw new IllegalArgumentException("Guide not found with ID: " + guideId);
             }
 
-            // Convert the list of trips to DTOs
             return guide.getTrips().stream()
                     .map(TripDTO::new)
                     .collect(Collectors.toSet());
@@ -171,12 +170,10 @@ public class TripDAO implements IDAO<TripDTO, Long>, iTripGuideDAO {
         try (EntityManager em = emf.createEntityManager()) {
             TypedQuery<Trip> query = em.createQuery("SELECT t FROM Trip t WHERE t.category = :category", Trip.class);
 
-            // Convert category string to enum
             Category categoryEnum;
             try {
                 categoryEnum = Category.valueOf(category.toUpperCase());
             } catch (IllegalArgumentException e) {
-                // Handle invalid category
                 throw new RuntimeException("Invalid category: " + category, e);
             }
 
