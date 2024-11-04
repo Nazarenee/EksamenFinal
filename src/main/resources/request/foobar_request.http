@@ -1,0 +1,107 @@
+### A simple get request to the test endpoint. No need for login
+GET {{url}}/auth/test/
+
+### Populate the database with some data
+GET {{url}}/haikus/populate/
+
+### Create a new user - this one will only get a USER role by default
+POST {{url}}/auth/register/
+
+{
+  "username": "user",
+  "password": "test123"
+}
+
+###
+POST {{url}}/auth/login/
+
+{
+  "username": "user",
+  "password": "test123"
+}
+
+> {% client.global.set("jwt_token", response.body.token); %}
+
+###
+GET {{url}}/protected/user_demo/
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+###
+GET {{url}}/protected/admin_demo/
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+### Add admin role to user
+POST {{url}}/auth/user/addrole/
+Content-Type: application/json
+Authorization: Bearer {{jwt_token}}
+
+{
+  "role": "admin"
+}
+### Fill the DB with some data
+POST {{url}}/trips/populate
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+### Get all trips
+GET {{url}}/trips
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+### Get a specific trip by ID
+GET {{url}}/trips/10
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+### Get trips by category
+GET {{url}}/trips/category/BEACH
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+
+### Update an existing trip
+PUT {{url}}/trips/1
+Content-Type: application/json
+Authorization: Bearer {{jwt_token}}
+
+{
+  "id": 2,
+  "startTime": [
+    2021,
+    1,
+    1,
+    10,
+    0
+  ],
+  "endTime": [
+    2021,
+    1,
+    1,
+    11,
+    0
+  ],
+  "startLocation": "Copehagen centrum, THE PLACE WHERE THE MAGIC HAPPENDS! ",
+  "name": "Come see the great city of copenhagen!",
+  "price": 2000,
+  "category": "CITY",
+  "guide": {
+    "id": 2,
+    "firstName": "Lebron",
+    "lastName": "Flames",
+    "email": "LebronFlames@gmail.com",
+    "phoneNumber": "12345678",
+    "yearsOfExperience": 100.0,
+    "trips": []
+  }
+}
+
+### Delete a trip by ID
+DELETE {{url}}/trips/9
+Authorization: Bearer {{jwt_token}}
+
+### Add an existing guide to and existing trip
+PUT {{url}}/trips/2/guides/4
+Authorization: Bearer {{jwt_token}}
+

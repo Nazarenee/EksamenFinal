@@ -1,0 +1,38 @@
+17:46:37.555 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7070
+21:54:27.877 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7070
+21:54:28.704 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #1 - DELETE /api/examples/1 handled with status 404 Not Found
+21:54:28.705 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #2 - DELETE /api/examples/1 handled with status 404 Not Found
+21:55:04.293 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7070
+21:55:05.081 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/examples handled with status 404 Not Found
+21:55:05.081 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/examples handled with status 404 Not Found
+21:55:32.865 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7070
+21:55:33.661 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/examples handled with status 404 Not Found
+21:55:33.661 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/examples handled with status 404 Not Found
+21:58:38.392 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7070
+21:58:39.197 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/examples handled with status 404 Not Found
+21:58:39.197 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/examples handled with status 404 Not Found
+21:59:44.585 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7070
+21:59:45.372 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/examples handled with status 404 Not Found
+21:59:45.372 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/examples handled with status 404 Not Found
+22:01:12.031 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7070
+22:01:12.820 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/examples/ handled with status 404 Not Found
+22:01:12.820 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/examples/ handled with status 404 Not Found
+22:02:06.202 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7070
+22:02:06.999 [JettyServerThreadPool-45] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/examples/ handled with status 404 Not Found
+22:02:06.999 [JettyServerThreadPool-45] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/examples/ handled with status 404 Not Found
+22:03:23.334 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7070
+22:03:24.133 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/examples/ handled with status 404 Not Found
+22:03:24.133 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/examples/ handled with status 404 Not Found
+22:04:14.652 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7070
+22:04:15.660 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/example/ handled with status 200 OK
+22:04:15.660 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/example/ handled with status 200 OK
+22:04:25.600 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7070
+22:04:26.643 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/example/ handled with status 200 OK
+22:04:26.643 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/example/ handled with status 200 OK
+22:04:34.738 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7070
+22:04:35.754 [JettyServerThreadPool-44] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=admintest, password=null, roles=[ADMIN])
+22:04:35.756 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #1 - POST /api/example handled with status 401 Unauthorized
+22:04:35.756 [JettyServerThreadPool-44] INFO  dat.config.ApplicationConfig - Request #2 - POST /api/example handled with status 401 Unauthorized
+22:06:22.083 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7070
+22:06:53.753 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7070
+22:10:29.468 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7070
