@@ -1,6 +1,7 @@
 package dat.routes;
 
 import dat.controllers.TripController;
+import dat.security.enums.Role;
 import io.javalin.apibuilder.EndpointGroup;
 
 import static io.javalin.apibuilder.ApiBuilder.*;
@@ -11,7 +12,7 @@ public class TripRoutes {
 
     protected EndpointGroup getRoutes() {
         return () -> {
-            get("/", tripController::readAll);
+            get("/", tripController::readAll, Role.USER, Role.ADMIN);
             get("/{id}", tripController::read);
             post("/", tripController::create);
             put("/{id}", tripController::update);
