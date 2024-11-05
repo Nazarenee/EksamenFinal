@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import dat.config.HibernateConfig;
 import dat.config.Populate;
@@ -65,14 +66,26 @@ public class TripController {
         try {
             int id = Integer.parseInt(ctx.pathParam("id"));
             TripDTO trip = dao.read((long) id);
-            String category = String.valueOf(trip.getCategory());
-            String responseBody = fetchPackingList(category);
-            ctx.json(trip);
-            ctx.json(responseBody);
+
+            String category = String.valueOf(trip.getCategory()).toLowerCase();
+            String packingListResponse = fetchPackingList(category);
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.registerModule(new JavaTimeModule());
+
+            JsonNode packingListNode = objectMapper.readTree(packingListResponse);
+
+            ObjectNode combinedResponse = objectMapper.createObjectNode();
+            combinedResponse.set("trip", objectMapper.valueToTree(trip));
+            combinedResponse.set("packingList", packingListNode);
+
+            ctx.json(combinedResponse);
         } catch (Exception e) {
-            ctx.json(new Message(HttpStatus.NOT_FOUND.getCode(), e.getMessage()));
+            ctx.json(new Message(HttpStatus.INTERNAL_SERVER_ERROR.getCode(), e.getMessage()));
         }
     }
+
+
 
     public void create(Context ctx) {
         try {

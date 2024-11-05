@@ -51,7 +51,7 @@ Accept: application/json
 Authorization: Bearer {{jwt_token}}
 
 ### Get a specific trip by ID
-GET {{url}}/trips/3
+GET {{url}}/trips/100
 Accept: application/json
 Authorization: Bearer {{jwt_token}}
 
@@ -106,5 +106,6 @@ PUT {{url}}/trips/2/guides/4
 Authorization: Bearer {{jwt_token}}
 
 ### get eksternal
-GET {{url}}/trips/packing-items
+GET {{url}}/trips/packinglist/lake
+Authorization: Bearer {{jwt_token}}
 
