@@ -28,13 +28,58 @@ public class TripDAO implements IDAO<TripDTO, Long>, iTripGuideDAO {
     @Override
     public TripDTO create(TripDTO exampleEntity) {
         try (EntityManager em = emf.createEntityManager()) {
+            em.getTransaction().begin();
             Trip trip = new Trip(exampleEntity);
+            em.persist(trip);
+            em.getTransaction().commit();
+            return new TripDTO(trip);
+        }
+    }
+
+
+    public TripDTO createNoGuide(TripDTO exampleEntity) {
+        try (EntityManager em = emf.createEntityManager()) {
+            Trip trip = Trip.builder().name(exampleEntity.getName())
+                    .price(exampleEntity.getPrice())
+                    .startTime(exampleEntity.getStartTime())
+                    .endTime(exampleEntity.getEndTime())
+                    .startLocation(exampleEntity.getStartLocation())
+                    .category(exampleEntity.getCategory())
+                    .guide(new Guide())
+                    .build();
             em.getTransaction().begin();
             em.persist(trip);
             em.getTransaction().commit();
-            return exampleEntity;
+            return new TripDTO(trip);
         }
     }
+
+
+    public TripDTO addGuideToTrip(long tripId, long guideId) {
+        try (EntityManager em = emf.createEntityManager()) {
+            em.getTransaction().begin();
+
+            Trip trip = em.find(Trip.class, tripId);
+            if (trip == null) {
+                throw new IllegalArgumentException("Trip with ID " + tripId + " does not exist");
+            }
+
+            Guide guide = em.find(Guide.class, guideId);
+            if (guide == null) {
+                throw new IllegalArgumentException("Guide with ID " + guideId + " does not exist");
+            }
+
+            trip.setGuide(guide);
+
+            em.persist(trip);
+            em.getTransaction().commit();
+
+            return new TripDTO(trip);
+        }
+    }
+
+
+
 
     @Override
     public TripDTO delete(Long id) {

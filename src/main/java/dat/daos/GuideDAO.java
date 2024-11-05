@@ -38,6 +38,16 @@ public class GuideDAO implements IDAO<GuideDTO, Long> {
         return guideDTO;
     }
 
+    public Guide findById(int id) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            return em.find(Guide.class, id);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
     @Override
     public GuideDTO delete(Long id) {
         return null;

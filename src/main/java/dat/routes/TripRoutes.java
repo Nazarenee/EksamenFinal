@@ -15,6 +15,7 @@ public class TripRoutes {
             get("/", tripController::readAll);
             get("/{id}", tripController::read);
             post("/", tripController::create);
+            post("/{tripId}/guide/{guideId}", tripController::addGuideToTrip);
             put("/{id}", tripController::update);
             delete("/{id}", tripController::delete);
             post("/populate", tripController::populate);

@@ -3,6 +3,8 @@ package dat.dtos;
 import dat.entities.Guide;
 import dat.entities.Trip;
 import dat.enums.Category;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +13,8 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
+@Builder
+@AllArgsConstructor
 public class TripDTO {
     private long id;
     private LocalDateTime startTime;
@@ -40,16 +44,17 @@ public class TripDTO {
         this.price = trip.getPrice();
         this.category = trip.getCategory();
         this.guide = new GuideDTO(trip.getGuide());
+
     }
 
 
-    public TripDTO(long id, LocalDateTime now, LocalDateTime localDateTime, String copenhagen, String updatedName, int i, Category category) {
+    public TripDTO(long id, LocalDateTime startTime, LocalDateTime endTime, String startLocation, String name, int price, Category category) {
         this.id = id;
-        this.startTime = now;
-        this.endTime = localDateTime;
-        this.startLocation = copenhagen;
-        this.name = updatedName;
-        this.price = i;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.startLocation = startLocation;
+        this.name = name;
+        this.price = price;
         this.category = category;
     }
 }

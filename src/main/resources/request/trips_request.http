@@ -42,6 +42,10 @@ Authorization: Bearer {{jwt_token}}
 }
 
 
+
+
+
+
 ### Fill the DB with some data
 POST {{url}}/trips/populate
 Accept: application/json
@@ -65,13 +69,59 @@ Accept: application/json
 Authorization: Bearer {{jwt_token}}
 
 
-### Update an existing trip
-PUT {{url}}/trips/3
+
+
+
+### CREATE
+POST {{url}}/trips
 Content-Type: application/json
 Authorization: Bearer {{jwt_token}}
 
 {
-  "id": 2,
+  "startTime": "2021-01-01T10:00:00",
+  "endTime": "2021-01-01T11:00:00",
+  "startLocation": "Copenhagen",
+  "name": "City Tour",
+  "price": 2000,
+  "category": "CITY"
+}
+
+
+
+### Add guide to Trip
+POST {{url}}/trips/3/guide/2
+Content-Type: application/json
+Authorization: Bearer {{jwt_token}}
+
+{
+  "id": 3,
+  "startTime": "2021-01-01T10:00:00",
+  "endTime": "2021-01-01T11:00:00",
+  "startLocation": "Copenhagen",
+  "name": "City Tour",
+  "price": 2000,
+  "category": "CITY",
+  "guide": {
+    "id": 2,
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "phoneNumber": "12345678",
+    "yearsOfExperience": 10,
+    "trips": []
+  }
+}
+
+
+
+
+### Update an existing trip
+PUT {{url}}/trips/2
+Content-Type: application/json
+Authorization: Bearer {{jwt_token}}
+
+{
+  "id": 12,
   "startTime": [
     2021,
     1,
@@ -105,14 +155,11 @@ Authorization: Bearer {{jwt_token}}
 DELETE {{url}}/trips/3
 Authorization: Bearer {{jwt_token}}
 
-### Add an existing guide to and existing trip
-PUT {{url}}/trips/2/guides/4
-Authorization: Bearer {{jwt_token}}
 
 ### get eksternalDataFromApi
-GET {{url}}/trips/packinglist/city
+GET {{url}}/trips/packinglist/beach
 Authorization: Bearer {{jwt_token}}
 
 ### get Total Packing-Weight by ID
-GET {{url}}/trips/packinglist/weight/2
+GET {{url}}/trips/packinglist/weight/1
 Authorization: Bearer {{jwt_token}}

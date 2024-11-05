@@ -79,11 +79,10 @@ public class TripController {
     }
 
 
-
     public void create(Context ctx) {
         try {
             TripDTO trip = ctx.bodyAsClass(TripDTO.class);
-            TripDTO createdTrip = dao.create((trip));
+            TripDTO createdTrip = dao.createNoGuide((trip));
             ctx.json(createdTrip);
         } catch (Exception e) {
             ctx.json(new Message(HttpStatus.INTERNAL_SERVER_ERROR.getCode(), e.getMessage()));
@@ -140,6 +139,20 @@ public class TripController {
         context.json(responseBody);
     }
 
+
+    public void addGuideToTrip(Context ctx) {
+        try {
+            long tripId = Long.parseLong(ctx.pathParam("tripId"));
+            long guideId = Long.parseLong(ctx.pathParam("guideId"));
+
+            TripDTO updatedTrip = dao.addGuideToTrip(tripId, guideId);
+            ctx.json(updatedTrip);
+        } catch (Exception e) {
+            ctx.status(HttpStatus.INTERNAL_SERVER_ERROR).json(new Message(HttpStatus.INTERNAL_SERVER_ERROR.getCode(), e.getMessage()));
+        }
+    }
+
+
     public void getPackingListWeight(Context ctx) {
         try {
             int id = Integer.parseInt(ctx.pathParam("id"));
@@ -158,5 +171,7 @@ public class TripController {
             ctx.json(new Message(HttpStatus.INTERNAL_SERVER_ERROR.getCode(), e.getMessage()));
         }
     }
-    }
+
+}
+
 
