@@ -1,5 +1,8 @@
 package dat.controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -7,6 +10,7 @@ import dat.config.HibernateConfig;
 import dat.config.Populate;
 import dat.constants.Message;
 import dat.daos.TripDAO;
+import dat.dtos.BuyDTO;
 import dat.dtos.PackingItemDTO;
 import dat.dtos.TripDTO;
 import dat.entities.PackingItemsResponse;
@@ -16,26 +20,25 @@ import io.javalin.http.HttpStatus;
 import jakarta.persistence.EntityManagerFactory;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.time.ZonedDateTime;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class TripController {
     private static TripController instance;
     private static TripDAO dao;
     private static final String PACKING_API_URL = "https://packingapi.cphbusinessapps.dk/packinglist/";
     private static final HttpClient httpClient = HttpClient.newHttpClient();
-    private final ObjectMapper objectMapper;
+    private static final ObjectMapper objectMapper = new ObjectMapper();
 
 
-    public TripController() {
-        this.objectMapper = new ObjectMapper();
-        this.objectMapper.registerModule(new JavaTimeModule());
-        this.objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+    static {
+        objectMapper.registerModule(new JavaTimeModule());
+        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
     }
 
     public static TripController getInstance() {
@@ -61,9 +64,12 @@ public class TripController {
     public void read(Context ctx) {
         try {
             int id = Integer.parseInt(ctx.pathParam("id"));
-            TripDTO doctor = dao.read((long) id);
-            ctx.json(doctor);
-        }catch (Exception e){
+            TripDTO trip = dao.read((long) id);
+            String category = String.valueOf(trip.getCategory());
+            String responseBody = fetchPackingList(category);
+            ctx.json(trip);
+            ctx.json(responseBody);
+        } catch (Exception e) {
             ctx.json(new Message(HttpStatus.NOT_FOUND.getCode(), e.getMessage()));
         }
     }
@@ -79,23 +85,23 @@ public class TripController {
     }
 
 
-    public void update(Context ctx){
+    public void update(Context ctx) {
         try {
             int id = Integer.parseInt(ctx.pathParam("id"));
             TripDTO doctor = ctx.bodyAsClass(TripDTO.class);
-            TripDTO updatedDoctor = dao.update(doctor, (long) id);
-            ctx.json(updatedDoctor);
-        }catch (Exception e){
+            TripDTO updatedTrip = dao.update(doctor, (long) id);
+            ctx.json(updatedTrip);
+        } catch (Exception e) {
             ctx.json(new Message(HttpStatus.INTERNAL_SERVER_ERROR.getCode(), e.getMessage()));
         }
     }
 
-    public void delete(Context ctx){
+    public void delete(Context ctx) {
         try {
             int id = Integer.parseInt(ctx.pathParam("id"));
             dao.delete((long) id);
             ctx.json(new Message(HttpStatus.OK.getCode(), "Resource deleted."));
-        }catch (Exception e){
+        } catch (Exception e) {
             ctx.json(new Message(HttpStatus.INTERNAL_SERVER_ERROR.getCode(), e.getMessage()));
         }
     }
@@ -115,15 +121,15 @@ public class TripController {
         }
     }
 
-        public void populate(Context context) {
-            try {
-                Populate.populate();
-                context.status(200).result("Database populated successfully.");
-            } catch (Exception e) {
-                context.status(500).result("An error occurred while populating the database: " + e.getMessage());
-                e.printStackTrace();
-            }
+    public void populate(Context context) {
+        try {
+            Populate.populate();
+            context.status(200).result("Database populated successfully.");
+        } catch (Exception e) {
+            context.status(500).result("An error occurred while populating the database: " + e.getMessage());
+            e.printStackTrace();
         }
+    }
 
     public void filterTripByCategory(Context context) {
         String category = context.pathParam("category");
@@ -133,38 +139,40 @@ public class TripController {
         } catch (RuntimeException e) {
             context.status(400).json(e.getMessage());
         } catch (Exception e) {
-            context.status(500).json( "Internal server error.");
+            context.status(500).json("Internal server error.");
         }
     }
 
-    public void getAllPackingItems(Context context) {
+    public void PackingListByCategory(Context context) {
+        String category = context.pathParam("category");
+        String responseBody = fetchPackingList(category);
+        context.json(responseBody);
+    }
+
+
+    private static String fetchPackingList(String category) {
         try {
-            System.out.println("Fetching packing items...");
-            List<PackingItemDTO> packingItems = fetchAllPackingItems();
-            context.json(packingItems);
-        } catch (IOException | InterruptedException e) {
-            context.status(500).json("Error fetching packing items.");
+            // Create an HTTP client
+            HttpClient client = HttpClient.newHttpClient();
+
+            // Create a request
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create("https://packingapi.cphbusinessapps.dk/packinglist/" + category))
+                    .build();
+
+            // Create and configure the ObjectMapper
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.registerModule(new JavaTimeModule());
+
+            // Send the request and get the response
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            // Return the response body
+            return response.body();
+        } catch (Exception e) {
             e.printStackTrace();
+            return "{\"error\": \"Failed to fetch packing list.\"}";
         }
-    }
-
-    private List<PackingItemDTO> fetchAllPackingItems() throws IOException, InterruptedException {
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(java.net.URI.create("https://packingapi.cphbusinessapps.dk/packinglist/beach"))
-                .header("Accept", "application/json")
-                .build();
-
-        HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println("Response status code: " + response.statusCode());
-        System.out.println("Response body: " + response.body());
-
-        System.out.println("Fetching all packing items.");
-        if (response.statusCode() != 200) {
-            throw new IOException("Failed to fetch packing items, status code: " + response.statusCode());
-        }
-
-        PackingItemsResponse itemsResponse = objectMapper.readValue(response.body(), PackingItemsResponse.class);
-        return itemsResponse.getItems();
     }
 
 

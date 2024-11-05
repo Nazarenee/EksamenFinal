@@ -20,7 +20,7 @@ public class TripRoutes {
             post("/populate", tripController::populate);
             put("/{tripid}/guides/{guideid}", tripController::addGuideToTrip);
             get("/category/{category}", tripController::filterTripByCategory);
-            get("/api/trips/packing-items", tripController::getAllPackingItems);
+            get("/packinglist/{category}", tripController::PackingListByCategory);
 
           /*  post("/", tripController::create, Role.USER, Role.ADMIN);
             put("/{id}", tripController::update, Role.ADMIN);

@@ -51,18 +51,18 @@ Accept: application/json
 Authorization: Bearer {{jwt_token}}
 
 ### Get a specific trip by ID
-GET {{url}}/trips/10
+GET {{url}}/trips/3
 Accept: application/json
 Authorization: Bearer {{jwt_token}}
 
 ### Get trips by category
-GET {{url}}/trips/category/BEACH
+GET {{url}}/trips/category/CITY
 Accept: application/json
 Authorization: Bearer {{jwt_token}}
 
 
 ### Update an existing trip
-PUT {{url}}/trips/1
+PUT {{url}}/trips/3
 Content-Type: application/json
 Authorization: Bearer {{jwt_token}}
 
@@ -104,4 +104,7 @@ Authorization: Bearer {{jwt_token}}
 ### Add an existing guide to and existing trip
 PUT {{url}}/trips/2/guides/4
 Authorization: Bearer {{jwt_token}}
+
+### get eksternal
+GET {{url}}/trips/packing-items
 
