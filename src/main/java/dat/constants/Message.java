@@ -8,3 +8,4 @@ package dat.constants;
  */
 public record Message(int status, String message) {
 }
+

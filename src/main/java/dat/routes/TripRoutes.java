@@ -12,15 +12,16 @@ public class TripRoutes {
 
     protected EndpointGroup getRoutes() {
         return () -> {
-            get("/", tripController::readAll, Role.USER, Role.ADMIN);
+            get("/", tripController::readAll);
             get("/{id}", tripController::read);
             post("/", tripController::create);
             put("/{id}", tripController::update);
             delete("/{id}", tripController::delete);
             post("/populate", tripController::populate);
-            put("/{tripid}/guides/{guideid}", tripController::addGuideToTrip);
             get("/category/{category}", tripController::filterTripByCategory);
             get("/packinglist/{category}", tripController::PackingListByCategory);
+            get("/packinglist/weight/{id}", tripController::getPackingListWeight);
+
 
           /*  post("/", tripController::create, Role.USER, Role.ADMIN);
             put("/{id}", tripController::update, Role.ADMIN);

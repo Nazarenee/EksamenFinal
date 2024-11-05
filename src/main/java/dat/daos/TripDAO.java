@@ -122,49 +122,6 @@ public class TripDAO implements IDAO<TripDTO, Long>, iTripGuideDAO {
         }
     }
 
-    @Override
-    public void addGuideToTrip(int tripId, int guideId) {
-        try (EntityManager em = emf.createEntityManager()) {
-            em.getTransaction().begin();
-
-            Trip trip = em.find(Trip.class, tripId);
-            if (trip == null) {
-                throw new IllegalArgumentException("Trip not found with ID: " + tripId);
-            }
-
-            Guide guide = em.find(Guide.class, guideId);
-            if (guide == null) {
-                throw new IllegalArgumentException("Guide not found with ID: " + guideId);
-            }
-
-            trip.setGuide(guide);
-
-            em.merge(trip);
-            em.getTransaction().commit();
-        } catch (Exception e) {
-
-            System.err.println("Error adding guide to trip: " + e.getMessage());
-            e.printStackTrace();
-            throw e;
-        }
-    }
-
-
-
-    @Override
-    public Set<TripDTO> getTripsByGuide(int guideId) {
-        try (EntityManager em = emf.createEntityManager()) {
-            Guide guide = em.find(Guide.class, guideId);
-            if (guide == null) {
-                throw new IllegalArgumentException("Guide not found with ID: " + guideId);
-            }
-
-            return guide.getTrips().stream()
-                    .map(TripDTO::new)
-                    .collect(Collectors.toSet());
-        }
-    }
-
 
     public List<TripDTO> filterTripByCategory(String category) {
         try (EntityManager em = emf.createEntityManager()) {
@@ -187,5 +144,13 @@ public class TripDAO implements IDAO<TripDTO, Long>, iTripGuideDAO {
     }
 
 
+    @Override
+    public void addGuideToTrip(int tripId, int guideId) {
 
+    }
+
+    @Override
+    public Set<TripDTO> getTripsByGuide(int guideId) {
+        return null;
+    }
 }

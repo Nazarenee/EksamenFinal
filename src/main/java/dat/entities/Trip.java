@@ -29,6 +29,7 @@ public class Trip {
     private String name;
     @Column(name = "price")
     private int price;
+    @Enumerated(EnumType.STRING)
     @Column(name = "category")
     private Category category;
     @ManyToOne(cascade = CascadeType.PERSIST)

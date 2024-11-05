@@ -1,7 +1,5 @@
 package dat.controllers;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -10,23 +8,16 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import dat.config.HibernateConfig;
 import dat.config.Populate;
 import dat.constants.Message;
+import dat.constants.Message2;
 import dat.daos.TripDAO;
-import dat.dtos.BuyDTO;
-import dat.dtos.PackingItemDTO;
 import dat.dtos.TripDTO;
-import dat.entities.PackingItemsResponse;
 import dat.entities.Trip;
+import dat.services.PackingService;
 import io.javalin.http.Context;
 import io.javalin.http.HttpStatus;
 import jakarta.persistence.EntityManagerFactory;
 
-import java.io.IOException;
-import java.net.URI;
 import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.time.ZonedDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 public class TripController {
@@ -35,6 +26,7 @@ public class TripController {
     private static final String PACKING_API_URL = "https://packingapi.cphbusinessapps.dk/packinglist/";
     private static final HttpClient httpClient = HttpClient.newHttpClient();
     private static final ObjectMapper objectMapper = new ObjectMapper();
+    private static PackingService packingService = new PackingService();
 
 
     static {
@@ -62,13 +54,14 @@ public class TripController {
         }
     }
 
+
     public void read(Context ctx) {
         try {
             int id = Integer.parseInt(ctx.pathParam("id"));
             TripDTO trip = dao.read((long) id);
 
             String category = String.valueOf(trip.getCategory()).toLowerCase();
-            String packingListResponse = fetchPackingList(category);
+            String packingListResponse = packingService.fetchPackingList(category);
 
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.registerModule(new JavaTimeModule());
@@ -89,8 +82,8 @@ public class TripController {
 
     public void create(Context ctx) {
         try {
-            Trip trip = ctx.bodyAsClass(Trip.class);
-            TripDTO createdTrip = dao.create(new TripDTO(trip));
+            TripDTO trip = ctx.bodyAsClass(TripDTO.class);
+            TripDTO createdTrip = dao.create((trip));
             ctx.json(createdTrip);
         } catch (Exception e) {
             ctx.json(new Message(HttpStatus.INTERNAL_SERVER_ERROR.getCode(), e.getMessage()));
@@ -119,21 +112,6 @@ public class TripController {
         }
     }
 
-    public void addGuideToTrip(Context ctx) {
-        int tripId = Integer.parseInt(ctx.pathParam("tripId"));
-        int guideId = Integer.parseInt(ctx.pathParam("guideId"));
-
-        try {
-            dao.addGuideToTrip(tripId, guideId);
-            ctx.status(200).result("Guide added to trip successfully.");
-        } catch (IllegalArgumentException e) {
-            ctx.status(404).result(e.getMessage());
-        } catch (Exception e) {
-            ctx.status(500).result("An error occurred while adding the guide to the trip: " + e.getMessage());
-            e.printStackTrace();
-        }
-    }
-
     public void populate(Context context) {
         try {
             Populate.populate();
@@ -158,35 +136,27 @@ public class TripController {
 
     public void PackingListByCategory(Context context) {
         String category = context.pathParam("category");
-        String responseBody = fetchPackingList(category);
+        String responseBody = packingService.fetchPackingList(category);
         context.json(responseBody);
     }
 
-
-    private static String fetchPackingList(String category) {
+    public void getPackingListWeight(Context ctx) {
         try {
-            // Create an HTTP client
-            HttpClient client = HttpClient.newHttpClient();
+            int id = Integer.parseInt(ctx.pathParam("id"));
+            TripDTO trip = dao.read((long) id);
 
-            // Create a request
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("https://packingapi.cphbusinessapps.dk/packinglist/" + category))
-                    .build();
+            if (trip == null) {
+                ctx.json(new Message(HttpStatus.NOT_FOUND.getCode(), "Trip not found."));
+                return;
+            }
 
-            // Create and configure the ObjectMapper
-            ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.registerModule(new JavaTimeModule());
+            String category = String.valueOf(trip.getCategory()).toLowerCase();
+            double totalWeight = packingService.calculatePackingListWeight(category);
 
-            // Send the request and get the response
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-            // Return the response body
-            return response.body();
+            ctx.json(new Message2(HttpStatus.OK.getCode(), "Total weight calculated.", totalWeight));
         } catch (Exception e) {
-            e.printStackTrace();
-            return "{\"error\": \"Failed to fetch packing list.\"}";
+            ctx.json(new Message(HttpStatus.INTERNAL_SERVER_ERROR.getCode(), e.getMessage()));
         }
     }
+    }
 
-
-}

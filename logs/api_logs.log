@@ -182,3 +182,238 @@
 13:34:56.948 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
 13:34:58.618 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/trips/100 handled with status 200 OK
 13:34:58.619 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/trips/100 handled with status 200 OK
+15:05:09.357 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+15:05:18.305 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/trips/packinglist/lake handled with status 200 OK
+15:05:18.306 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/trips/packinglist/lake handled with status 200 OK
+15:05:28.558 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+15:05:30.748 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/trips/packinglist/lake handled with status 200 OK
+15:05:30.749 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/trips/packinglist/lake handled with status 200 OK
+15:05:41.951 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+15:06:33.065 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+15:06:47.311 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/trips/packinglist/lake handled with status 200 OK
+15:06:47.312 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/trips/packinglist/lake handled with status 200 OK
+15:14:38.077 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+15:14:44.814 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/routes handled with status 200 OK
+15:14:44.815 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/routes handled with status 200 OK
+15:14:50.192 [JettyServerThreadPool-23] INFO  dat.config.ApplicationConfig - Request #3 - GET /api/trips/packinglist/weight/1 handled with status 200 OK
+15:14:50.193 [JettyServerThreadPool-23] INFO  dat.config.ApplicationConfig - Request #4 - GET /api/trips/packinglist/weight/1 handled with status 200 OK
+15:14:55.802 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+15:15:03.946 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - POST /api/trips/populate handled with status 200 OK
+15:15:03.947 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - POST /api/trips/populate handled with status 200 OK
+15:15:10.194 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #3 - GET /api/trips handled with status 401 Unauthorized
+15:15:10.195 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #4 - GET /api/trips handled with status 401 Unauthorized
+15:15:12.056 [JettyServerThreadPool-29] INFO  dat.config.ApplicationConfig - Request #5 - GET /api/trips/packing-items handled with status 200 OK
+15:15:12.056 [JettyServerThreadPool-29] INFO  dat.config.ApplicationConfig - Request #6 - GET /api/trips/packing-items handled with status 200 OK
+15:15:13.546 [JettyServerThreadPool-35] INFO  dat.config.ApplicationConfig - Request #7 - GET /api/trips/1 handled with status 200 OK
+15:15:13.546 [JettyServerThreadPool-35] INFO  dat.config.ApplicationConfig - Request #8 - GET /api/trips/1 handled with status 200 OK
+15:15:14.873 [JettyServerThreadPool-29] INFO  dat.config.ApplicationConfig - Request #9 - GET /api/trips/2 handled with status 200 OK
+15:15:14.874 [JettyServerThreadPool-29] INFO  dat.config.ApplicationConfig - Request #10 - GET /api/trips/2 handled with status 200 OK
+15:15:16.431 [JettyServerThreadPool-35] INFO  dat.config.ApplicationConfig - Request #11 - GET /api/trips/3 handled with status 200 OK
+15:15:16.431 [JettyServerThreadPool-35] INFO  dat.config.ApplicationConfig - Request #12 - GET /api/trips/3 handled with status 200 OK
+15:15:21.376 [JettyServerThreadPool-29] INFO  dat.config.ApplicationConfig - Request #13 - GET /api/trips/packinglist/weight/3 handled with status 200 OK
+15:15:21.377 [JettyServerThreadPool-29] INFO  dat.config.ApplicationConfig - Request #14 - GET /api/trips/packinglist/weight/3 handled with status 200 OK
+15:15:31.146 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #15 - GET /api/trips/3 handled with status 200 OK
+15:15:31.146 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #16 - GET /api/trips/3 handled with status 200 OK
+15:18:21.060 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+15:18:24.263 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/trips/packinglist/weight/3 handled with status 200 OK
+15:18:24.264 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/trips/packinglist/weight/3 handled with status 200 OK
+15:20:09.025 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+15:20:19.037 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - POST /api/auth/login/ handled with status 200 OK
+15:20:19.038 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - POST /api/auth/login/ handled with status 200 OK
+15:20:37.224 [JettyServerThreadPool-24] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user, password=null, roles=[user])
+15:20:37.447 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #3 - GET /api/trips handled with status 200 OK
+15:20:37.447 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #4 - GET /api/trips handled with status 200 OK
+15:20:43.229 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #5 - GET /api/trips/3 handled with status 200 OK
+15:20:43.229 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #6 - GET /api/trips/3 handled with status 200 OK
+15:21:30.970 [JettyServerThreadPool-26] INFO  dat.config.ApplicationConfig - Request #7 - PUT /api/trips/3 handled with status 200 OK
+15:21:30.970 [JettyServerThreadPool-26] INFO  dat.config.ApplicationConfig - Request #8 - PUT /api/trips/3 handled with status 200 OK
+15:21:34.864 [JettyServerThreadPool-27] INFO  dat.config.ApplicationConfig - Request #9 - GET /api/trips/3 handled with status 200 OK
+15:21:34.864 [JettyServerThreadPool-27] INFO  dat.config.ApplicationConfig - Request #10 - GET /api/trips/3 handled with status 200 OK
+15:21:46.795 [JettyServerThreadPool-22] INFO  dat.config.ApplicationConfig - Request #11 - DELETE /api/trips/3 handled with status 200 OK
+15:21:46.795 [JettyServerThreadPool-22] INFO  dat.config.ApplicationConfig - Request #12 - DELETE /api/trips/3 handled with status 200 OK
+15:21:50.293 [JettyServerThreadPool-23] INFO  dat.config.ApplicationConfig - Request #13 - GET /api/trips/3 handled with status 200 OK
+15:21:50.293 [JettyServerThreadPool-23] INFO  dat.config.ApplicationConfig - Request #14 - GET /api/trips/3 handled with status 200 OK
+15:22:37.579 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #15 - GET /api/trips/packinglist/weight/4 handled with status 200 OK
+15:22:37.580 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #16 - GET /api/trips/packinglist/weight/4 handled with status 200 OK
+15:22:41.652 [JettyServerThreadPool-35] INFO  dat.config.ApplicationConfig - Request #17 - GET /api/trips/packinglist/weight/5 handled with status 200 OK
+15:22:41.652 [JettyServerThreadPool-35] INFO  dat.config.ApplicationConfig - Request #18 - GET /api/trips/packinglist/weight/5 handled with status 200 OK
+15:22:44.398 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #19 - GET /api/trips/packinglist/weight/6 handled with status 200 OK
+15:22:44.398 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #20 - GET /api/trips/packinglist/weight/6 handled with status 200 OK
+15:22:46.771 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #21 - GET /api/trips/packinglist/weight/4 handled with status 200 OK
+15:22:46.771 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #22 - GET /api/trips/packinglist/weight/4 handled with status 200 OK
+15:23:38.358 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+15:23:43.771 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - POST /api/trips/populate handled with status 200 OK
+15:23:43.772 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - POST /api/trips/populate handled with status 200 OK
+15:24:34.495 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #3 - POST /api/auth/register/ handled with status 201 Created
+15:24:34.495 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #4 - POST /api/auth/register/ handled with status 201 Created
+15:30:55.943 [JettyServerThreadPool-39] ERROR dat.controllers.ExceptionController - null 200 'tripId' is not a valid path-param for '/trips/{tripid}/guides/{guideid}'.
+15:30:56.095 [JettyServerThreadPool-39] INFO  dat.config.ApplicationConfig - Request #5 - PUT /api/trips/2/guides/1 handled with status 500 Server Error
+15:30:56.095 [JettyServerThreadPool-39] INFO  dat.config.ApplicationConfig - Request #6 - PUT /api/trips/2/guides/1 handled with status 500 Server Error
+15:38:56.714 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+15:39:03.861 [JettyServerThreadPool-34] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user, password=null, roles=[user])
+15:39:04.112 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/trips handled with status 200 OK
+15:39:04.112 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/trips handled with status 200 OK
+15:39:13.837 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #3 - GET /api/trips/category/CITY handled with status 200 OK
+15:39:13.837 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #4 - GET /api/trips/category/CITY handled with status 200 OK
+15:39:17.635 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #5 - GET /api/trips/1 handled with status 200 OK
+15:39:17.635 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #6 - GET /api/trips/1 handled with status 200 OK
+15:39:25.687 [JettyServerThreadPool-26] INFO  dat.config.ApplicationConfig - Request #7 - GET /api/trips/3 handled with status 200 OK
+15:39:25.687 [JettyServerThreadPool-26] INFO  dat.config.ApplicationConfig - Request #8 - GET /api/trips/3 handled with status 200 OK
+15:39:28.066 [JettyServerThreadPool-27] INFO  dat.config.ApplicationConfig - Request #9 - GET /api/trips/2 handled with status 200 OK
+15:39:28.066 [JettyServerThreadPool-27] INFO  dat.config.ApplicationConfig - Request #10 - GET /api/trips/2 handled with status 200 OK
+15:39:40.446 [JettyServerThreadPool-22] INFO  dat.config.ApplicationConfig - Request #11 - GET /api/trips/packinglist/lake handled with status 200 OK
+15:39:40.447 [JettyServerThreadPool-22] INFO  dat.config.ApplicationConfig - Request #12 - GET /api/trips/packinglist/lake handled with status 200 OK
+15:39:48.818 [JettyServerThreadPool-23] INFO  dat.config.ApplicationConfig - Request #13 - GET /api/trips/packinglist/city handled with status 200 OK
+15:39:48.818 [JettyServerThreadPool-23] INFO  dat.config.ApplicationConfig - Request #14 - GET /api/trips/packinglist/city handled with status 200 OK
+15:39:53.533 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #15 - GET /api/trips/packinglist/weight/4 handled with status 200 OK
+15:39:53.533 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #16 - GET /api/trips/packinglist/weight/4 handled with status 200 OK
+15:39:56.565 [JettyServerThreadPool-35] INFO  dat.config.ApplicationConfig - Request #17 - GET /api/trips/packinglist/weight/1 handled with status 200 OK
+15:39:56.565 [JettyServerThreadPool-35] INFO  dat.config.ApplicationConfig - Request #18 - GET /api/trips/packinglist/weight/1 handled with status 200 OK
+15:39:59.525 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #19 - GET /api/trips/packinglist/weight/2 handled with status 200 OK
+15:39:59.526 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #20 - GET /api/trips/packinglist/weight/2 handled with status 200 OK
+15:41:26.158 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+15:41:27.974 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/trips/packinglist/city handled with status 200 OK
+15:41:27.975 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/trips/packinglist/city handled with status 200 OK
+15:44:12.778 [JettyServerThreadPool-29] INFO  dat.config.ApplicationConfig - Request #3 - GET /api/trips/packinglist/lake handled with status 200 OK
+15:44:12.779 [JettyServerThreadPool-29] INFO  dat.config.ApplicationConfig - Request #4 - GET /api/trips/packinglist/lake handled with status 200 OK
+15:45:16.136 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #5 - GET /api/trips/packinglist/beach handled with status 200 OK
+15:45:16.137 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #6 - GET /api/trips/packinglist/beach handled with status 200 OK
+15:45:46.458 [JettyServerThreadPool-26] INFO  dat.config.ApplicationConfig - Request #7 - DELETE /api/trips/30 handled with status 200 OK
+15:45:46.458 [JettyServerThreadPool-26] INFO  dat.config.ApplicationConfig - Request #8 - DELETE /api/trips/30 handled with status 200 OK
+15:53:05.904 [JettyServerThreadPool-51] INFO  dat.config.ApplicationConfig - Request #9 - GET /api/trips handled with status 401 Unauthorized
+15:53:05.917 [JettyServerThreadPool-51] INFO  dat.config.ApplicationConfig - Request #10 - GET /api/trips handled with status 401 Unauthorized
+15:53:15.573 [JettyServerThreadPool-22] INFO  dat.config.ApplicationConfig - Request #11 - GET /api/trips/2 handled with status 200 OK
+15:53:15.573 [JettyServerThreadPool-22] INFO  dat.config.ApplicationConfig - Request #12 - GET /api/trips/2 handled with status 200 OK
+15:53:24.526 [JettyServerThreadPool-23] INFO  dat.config.ApplicationConfig - Request #13 - POST /api/auth/login/ handled with status 200 OK
+15:53:24.527 [JettyServerThreadPool-23] INFO  dat.config.ApplicationConfig - Request #14 - POST /api/auth/login/ handled with status 200 OK
+15:53:28.190 [JettyServerThreadPool-38] INFO  dat.config.ApplicationConfig - Request #15 - POST /api/trips handled with status 200 OK
+15:53:28.190 [JettyServerThreadPool-38] INFO  dat.config.ApplicationConfig - Request #16 - POST /api/trips handled with status 200 OK
+15:53:36.975 [JettyServerThreadPool-24] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user, password=null, roles=[user])
+15:53:37.058 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #17 - GET /api/trips handled with status 200 OK
+15:53:37.059 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #18 - GET /api/trips handled with status 200 OK
+15:54:20.038 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #19 - POST /api/trips handled with status 200 OK
+15:54:20.038 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #20 - POST /api/trips handled with status 200 OK
+15:54:34.249 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+15:54:35.747 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - POST /api/trips handled with status 200 OK
+15:54:35.747 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - POST /api/trips handled with status 200 OK
+15:54:48.892 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #3 - POST /api/trips handled with status 200 OK
+15:54:48.892 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #4 - POST /api/trips handled with status 200 OK
+15:54:55.353 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #5 - POST /api/trips handled with status 200 OK
+15:54:55.353 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #6 - POST /api/trips handled with status 200 OK
+15:55:14.302 [JettyServerThreadPool-26] INFO  dat.config.ApplicationConfig - Request #7 - POST /api/trips handled with status 200 OK
+15:55:14.303 [JettyServerThreadPool-26] INFO  dat.config.ApplicationConfig - Request #8 - POST /api/trips handled with status 200 OK
+16:02:11.019 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+16:02:12.301 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - POST /api/trips handled with status 200 OK
+16:02:12.302 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - POST /api/trips handled with status 200 OK
+16:02:27.122 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #3 - POST /api/trips handled with status 200 OK
+16:02:27.122 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #4 - POST /api/trips handled with status 200 OK
+16:02:39.933 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #5 - POST /api/trips handled with status 200 OK
+16:02:39.933 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #6 - POST /api/trips handled with status 200 OK
+16:03:03.052 [JettyServerThreadPool-26] INFO  dat.config.ApplicationConfig - Request #7 - POST /api/trips handled with status 200 OK
+16:03:03.052 [JettyServerThreadPool-26] INFO  dat.config.ApplicationConfig - Request #8 - POST /api/trips handled with status 200 OK
+16:05:32.506 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+16:06:57.853 [JettyServerThreadPool-35] INFO  dat.config.ApplicationConfig - Request #1 - POST /api/auth/login/ handled with status 200 OK
+16:06:57.854 [JettyServerThreadPool-35] INFO  dat.config.ApplicationConfig - Request #2 - POST /api/auth/login/ handled with status 200 OK
+16:07:02.945 [JettyServerThreadPool-24] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user, password=null, roles=[user])
+16:07:03.004 [JettyServerThreadPool-24] ERROR dat.controllers.ExceptionController - null 200 Cannot invoke "dat.entities.Guide.getId()" because "guide" is null
+16:07:03.155 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #3 - GET /api/trips handled with status 500 Server Error
+16:07:03.155 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #4 - GET /api/trips handled with status 500 Server Error
+16:07:09.394 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+16:07:13.717 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - POST /api/auth/login/ handled with status 200 OK
+16:07:13.718 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - POST /api/auth/login/ handled with status 200 OK
+16:07:18.271 [JettyServerThreadPool-24] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user, password=null, roles=[user])
+16:07:18.328 [JettyServerThreadPool-24] ERROR dat.controllers.ExceptionController - null 200 Cannot invoke "dat.entities.Guide.getId()" because "guide" is null
+16:07:18.470 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #3 - GET /api/trips handled with status 500 Server Error
+16:07:18.470 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #4 - GET /api/trips handled with status 500 Server Error
+16:07:28.878 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #5 - GET /api/trips/2 handled with status 200 OK
+16:07:28.879 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #6 - GET /api/trips/2 handled with status 200 OK
+16:07:31.639 [JettyServerThreadPool-26] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user, password=null, roles=[user])
+16:07:31.647 [JettyServerThreadPool-26] ERROR dat.controllers.ExceptionController - null 200 Cannot invoke "dat.entities.Guide.getId()" because "guide" is null
+16:07:31.648 [JettyServerThreadPool-26] INFO  dat.config.ApplicationConfig - Request #7 - GET /api/trips handled with status 500 Server Error
+16:07:31.648 [JettyServerThreadPool-26] INFO  dat.config.ApplicationConfig - Request #8 - GET /api/trips handled with status 500 Server Error
+16:07:34.858 [JettyServerThreadPool-27] INFO  dat.config.ApplicationConfig - Request #9 - POST /api/auth/login/ handled with status 200 OK
+16:07:34.859 [JettyServerThreadPool-27] INFO  dat.config.ApplicationConfig - Request #10 - POST /api/auth/login/ handled with status 200 OK
+16:07:42.083 [JettyServerThreadPool-22] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user, password=null, roles=[user])
+16:07:42.092 [JettyServerThreadPool-22] ERROR dat.controllers.ExceptionController - null 200 Cannot invoke "dat.entities.Guide.getId()" because "guide" is null
+16:07:42.093 [JettyServerThreadPool-22] INFO  dat.config.ApplicationConfig - Request #11 - GET /api/trips handled with status 500 Server Error
+16:07:42.093 [JettyServerThreadPool-22] INFO  dat.config.ApplicationConfig - Request #12 - GET /api/trips handled with status 500 Server Error
+16:07:44.274 [JettyServerThreadPool-23] INFO  dat.config.ApplicationConfig - Request #13 - GET /api/trips/2 handled with status 200 OK
+16:07:44.274 [JettyServerThreadPool-23] INFO  dat.config.ApplicationConfig - Request #14 - GET /api/trips/2 handled with status 200 OK
+16:08:32.667 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #15 - POST /api/trips handled with status 200 OK
+16:08:32.667 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #16 - POST /api/trips handled with status 200 OK
+16:08:39.619 [JettyServerThreadPool-35] INFO  dat.config.ApplicationConfig - Request #17 - POST /api/trips handled with status 200 OK
+16:08:39.619 [JettyServerThreadPool-35] INFO  dat.config.ApplicationConfig - Request #18 - POST /api/trips handled with status 200 OK
+16:09:03.203 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+16:09:04.410 [JettyServerThreadPool-34] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user, password=null, roles=[user])
+16:09:04.491 [JettyServerThreadPool-34] ERROR dat.controllers.ExceptionController - null 200 Cannot invoke "dat.entities.Guide.getId()" because "guide" is null
+16:09:04.644 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/trips handled with status 500 Server Error
+16:09:04.645 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/trips handled with status 500 Server Error
+16:09:11.108 [JettyServerThreadPool-24] ERROR dat.controllers.ExceptionController - null 200 User with username: user already exists
+16:09:11.108 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #3 - POST /api/auth/register/ handled with status 500 Server Error
+16:09:11.108 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #4 - POST /api/auth/register/ handled with status 500 Server Error
+16:09:13.387 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #5 - POST /api/auth/login/ handled with status 200 OK
+16:09:13.387 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #6 - POST /api/auth/login/ handled with status 200 OK
+16:09:19.921 [JettyServerThreadPool-26] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user, password=null, roles=[user])
+16:09:19.929 [JettyServerThreadPool-26] ERROR dat.controllers.ExceptionController - null 200 Cannot invoke "dat.entities.Guide.getId()" because "guide" is null
+16:09:19.929 [JettyServerThreadPool-26] INFO  dat.config.ApplicationConfig - Request #7 - GET /api/trips handled with status 500 Server Error
+16:09:19.929 [JettyServerThreadPool-26] INFO  dat.config.ApplicationConfig - Request #8 - GET /api/trips handled with status 500 Server Error
+16:09:21.468 [JettyServerThreadPool-27] INFO  dat.config.ApplicationConfig - Request #9 - GET /api/trips/2 handled with status 200 OK
+16:09:21.468 [JettyServerThreadPool-27] INFO  dat.config.ApplicationConfig - Request #10 - GET /api/trips/2 handled with status 200 OK
+16:09:32.385 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+16:09:38.696 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - POST /api/auth/login/ handled with status 200 OK
+16:09:38.697 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - POST /api/auth/login/ handled with status 200 OK
+16:09:44.355 [JettyServerThreadPool-24] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user, password=null, roles=[user])
+16:09:44.418 [JettyServerThreadPool-24] ERROR dat.controllers.ExceptionController - null 200 Cannot invoke "dat.entities.Guide.getId()" because "guide" is null
+16:09:44.553 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #3 - GET /api/trips handled with status 500 Server Error
+16:09:44.553 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #4 - GET /api/trips handled with status 500 Server Error
+16:09:45.960 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #5 - POST /api/trips/populate handled with status 200 OK
+16:09:45.960 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #6 - POST /api/trips/populate handled with status 200 OK
+16:09:47.636 [JettyServerThreadPool-26] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user, password=null, roles=[user])
+16:09:47.645 [JettyServerThreadPool-26] ERROR dat.controllers.ExceptionController - null 200 Cannot invoke "dat.entities.Guide.getId()" because "guide" is null
+16:09:47.646 [JettyServerThreadPool-26] INFO  dat.config.ApplicationConfig - Request #7 - GET /api/trips handled with status 500 Server Error
+16:09:47.646 [JettyServerThreadPool-26] INFO  dat.config.ApplicationConfig - Request #8 - GET /api/trips handled with status 500 Server Error
+16:10:29.461 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+16:10:31.637 [JettyServerThreadPool-34] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user, password=null, roles=[user])
+16:10:31.725 [JettyServerThreadPool-34] ERROR dat.controllers.ExceptionController - null 200 Cannot invoke "dat.entities.Guide.getId()" because "guide" is null
+16:10:31.881 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/trips handled with status 500 Server Error
+16:10:31.882 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/trips handled with status 500 Server Error
+16:10:35.965 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #3 - POST /api/auth/login/ handled with status 200 OK
+16:10:35.965 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #4 - POST /api/auth/login/ handled with status 200 OK
+16:10:38.572 [JettyServerThreadPool-25] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user, password=null, roles=[user])
+16:10:38.584 [JettyServerThreadPool-25] ERROR dat.controllers.ExceptionController - null 200 Cannot invoke "dat.entities.Guide.getId()" because "guide" is null
+16:10:38.585 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #5 - GET /api/trips handled with status 500 Server Error
+16:10:38.585 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #6 - GET /api/trips handled with status 500 Server Error
+16:11:43.418 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+16:11:47.243 [JettyServerThreadPool-34] ERROR dat.controllers.ExceptionController - null 200 Cannot invoke "dat.entities.Guide.getId()" because "guide" is null
+16:11:47.391 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/trips handled with status 500 Server Error
+16:11:47.391 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/trips handled with status 500 Server Error
+16:11:50.056 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #3 - POST /api/trips/populate handled with status 200 OK
+16:11:50.056 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #4 - POST /api/trips/populate handled with status 200 OK
+16:11:51.528 [JettyServerThreadPool-25] ERROR dat.controllers.ExceptionController - null 200 Cannot invoke "dat.entities.Guide.getId()" because "guide" is null
+16:11:51.529 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #5 - GET /api/trips handled with status 500 Server Error
+16:11:51.529 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #6 - GET /api/trips handled with status 500 Server Error
+16:13:09.189 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+16:13:22.468 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/routes handled with status 200 OK
+16:13:22.469 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/routes handled with status 200 OK
+16:13:31.914 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #3 - POST /api/auth/register/ handled with status 201 Created
+16:13:31.914 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #4 - POST /api/auth/register/ handled with status 201 Created
+16:13:35.227 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #5 - POST /api/auth/login/ handled with status 200 OK
+16:13:35.227 [JettyServerThreadPool-25] INFO  dat.config.ApplicationConfig - Request #6 - POST /api/auth/login/ handled with status 200 OK
+16:13:43.733 [JettyServerThreadPool-26] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user4, password=null, roles=[user])
+16:13:43.792 [JettyServerThreadPool-26] ERROR dat.controllers.ExceptionController - null 200 Cannot invoke "dat.entities.Guide.getId()" because "guide" is null
+16:13:43.912 [JettyServerThreadPool-26] INFO  dat.config.ApplicationConfig - Request #7 - GET /api/trips handled with status 500 Server Error
+16:13:43.912 [JettyServerThreadPool-26] INFO  dat.config.ApplicationConfig - Request #8 - GET /api/trips handled with status 500 Server Error
+16:13:57.785 [main] INFO  dat.config.ApplicationConfig - Server started on port: 7071
+16:13:58.398 [JettyServerThreadPool-24] ERROR dat.controllers.ExceptionController - null 200 Cannot invoke "dat.entities.Guide.getId()" because "guide" is null
+16:13:58.398 [JettyServerThreadPool-34] ERROR dat.controllers.ExceptionController - null 200 Cannot invoke "dat.entities.Guide.getId()" because "guide" is null
+16:13:58.550 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #2 - GET /api/trips handled with status 500 Server Error
+16:13:58.550 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #1 - GET /api/trips handled with status 500 Server Error
+16:13:58.551 [JettyServerThreadPool-24] INFO  dat.config.ApplicationConfig - Request #3 - GET /api/trips handled with status 500 Server Error
+16:13:58.551 [JettyServerThreadPool-34] INFO  dat.config.ApplicationConfig - Request #4 - GET /api/trips handled with status 500 Server Error
+16:13:59.623 [JettyServerThreadPool-29] INFO  dat.config.ApplicationConfig - Request #5 - GET /api/routes handled with status 200 OK
+16:13:59.624 [JettyServerThreadPool-29] INFO  dat.config.ApplicationConfig - Request #6 - GET /api/routes handled with status 200 OK
+16:14:04.378 [JettyServerThreadPool-35] INFO  dat.config.ApplicationConfig - Request #7 - GET /api/trips/1 handled with status 200 OK
+16:14:04.378 [JettyServerThreadPool-35] INFO  dat.config.ApplicationConfig - Request #8 - GET /api/trips/1 handled with status 200 OK
+16:14:10.749 [JettyServerThreadPool-29] ERROR dat.controllers.ExceptionController - null 200 Cannot invoke "dat.entities.Guide.getId()" because "guide" is null
+16:14:10.749 [JettyServerThreadPool-29] INFO  dat.config.ApplicationConfig - Request #9 - GET /api/trips handled with status 500 Server Error
+16:14:10.750 [JettyServerThreadPool-29] INFO  dat.config.ApplicationConfig - Request #10 - GET /api/trips handled with status 500 Server Error

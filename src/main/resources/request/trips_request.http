@@ -8,7 +8,7 @@ GET {{url}}/haikus/populate/
 POST {{url}}/auth/register/
 
 {
-  "username": "user",
+  "username": "user4",
   "password": "test123"
 }
 
@@ -16,7 +16,7 @@ POST {{url}}/auth/register/
 POST {{url}}/auth/login/
 
 {
-  "username": "user",
+  "username": "user4",
   "password": "test123"
 }
 
@@ -40,18 +40,22 @@ Authorization: Bearer {{jwt_token}}
 {
   "role": "admin"
 }
+
+
 ### Fill the DB with some data
 POST {{url}}/trips/populate
 Accept: application/json
 Authorization: Bearer {{jwt_token}}
+
 
 ### Get all trips
 GET {{url}}/trips
 Accept: application/json
 Authorization: Bearer {{jwt_token}}
 
+
 ### Get a specific trip by ID
-GET {{url}}/trips/100
+GET {{url}}/trips/2
 Accept: application/json
 Authorization: Bearer {{jwt_token}}
 
@@ -82,7 +86,7 @@ Authorization: Bearer {{jwt_token}}
     11,
     0
   ],
-  "startLocation": "Copehagen centrum, THE PLACE WHERE THE MAGIC HAPPENDS! ",
+  "startLocation": "Copehagen THE PLACE WHERE THE MAGIC HAPPENDS! ",
   "name": "Come see the great city of copenhagen!",
   "price": 2000,
   "category": "CITY",
@@ -98,14 +102,17 @@ Authorization: Bearer {{jwt_token}}
 }
 
 ### Delete a trip by ID
-DELETE {{url}}/trips/9
+DELETE {{url}}/trips/3
 Authorization: Bearer {{jwt_token}}
 
 ### Add an existing guide to and existing trip
 PUT {{url}}/trips/2/guides/4
 Authorization: Bearer {{jwt_token}}
 
-### get eksternal
-GET {{url}}/trips/packinglist/lake
+### get eksternalDataFromApi
+GET {{url}}/trips/packinglist/city
 Authorization: Bearer {{jwt_token}}
 
+### get Total Packing-Weight by ID
+GET {{url}}/trips/packinglist/weight/2
+Authorization: Bearer {{jwt_token}}
